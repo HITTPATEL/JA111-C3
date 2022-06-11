@@ -28,7 +28,8 @@ public class Demo {
 		Boolean nBoolean=Pattern.matches("[a-zA-Z\\s]{3,8}", userName);
 		Boolean pBoolean=Pattern.matches("[a-zA-Z0-9]{3,8}", password);
 		Boolean mBoolean=Pattern.matches("[6789]{1}[0-9]{9}", mobileNumber);
-	
+		Boolean eBoolean=Pattern.matches("[a-zA-Z.0-9]+[@][a-zA-Z.0-9]+", email);
+	  
 		 
 		if(nBoolean==false) {
 			System.out.println("Enter Valid Name");
@@ -39,9 +40,12 @@ public class Demo {
 		if(mBoolean==false) {
 			System.out.println("Enter Valid Mobile Number");
 		}
+		if(eBoolean==false) {
+			System.out.println("Enter Valid Email ID");
+		}
 			
 		
-		if(nBoolean==true || pBoolean==true  || mBoolean==true) {
+		if(nBoolean==true && pBoolean==true  && mBoolean==true && eBoolean==true) {
 			Customer customer=new Customer();
 			customer.setUserName(userName);
 			customer.setPassword(password);
